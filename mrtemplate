@@ -1,0 +1,30 @@
+#!/bin/bash
+
+name=$1
+
+mkdir $name
+cd $name
+
+#make html
+echo \
+'<template name="'$name'">
+    <div class="template-'$name'">
+    </div>
+</template>' > $name.html
+
+#make css
+echo \
+'.template-'$name' {
+}' > $name.css
+
+#make js
+echo \
+'Template.'$name'.rendered = function(){
+}
+ 
+Template.'$name'.events({
+});
+
+
+Template.'$name'.helpers({
+});' > $name.js
